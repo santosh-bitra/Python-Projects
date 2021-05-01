@@ -15,6 +15,7 @@ Charecters = ["<", ">", "/", "$", "#", "&", "@", "."]
 a = int(input("How many alphabets do you want in your password? "))
 b = int(input("How many numbers do you want in your password? "))
 c = int(input("How many characters do you want in your password? "))
+keyword = input("Kindly enter your keyword : ")
 
 ''' The actual logic goes below. Level = complex '''
 # Defining variable 'password' as []. this means it is an empty list for now and will keep adding/appending values that are thrown by the loops into it.
@@ -36,9 +37,14 @@ for i in range(0, c):
 random.shuffle(password)
 
 # We are now converting the final passwd list to string so we can get the passwd as a single word and not separated
-y = ""
+y = f"{keyword}"
 for x in password:
     y += x
-print(f"Your new complex password is : {y}")
+
+y = list(y)
+random.shuffle(y)
+z = ''.join(y)
+
+print(f"Your new complex password is : {z}")
 
 
